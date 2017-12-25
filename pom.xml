@@ -15,5 +15,21 @@
         </configuration>
       </plugin>
     </plugins>
+    
   </build>
+   <distributionManagement>
+                <!-- Publish versioned releases here -->
+                <repository>
+                        <id>1</id>
+                        <name>Dépôt d’entreprise</name>
+                        <url>http://localhost:8081/nexus/content/repositories/localrepository/</url>
+                </repository>
+
+                <!-- Publish snapshots here -->
+                <snapshotRepository>
+                      <id>1</id>
+                        <name>Dépôt d’entreprise</name>
+                        <url>http://localhost:8081/nexus/content/repositories/localrepository/</url>
+                </snapshotRepository>
+        </distributionManagement>
 </project>
