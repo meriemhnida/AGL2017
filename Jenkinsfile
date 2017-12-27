@@ -3,8 +3,8 @@ pipeline {
         label "windows"
     }
     tools {
-        maven 'Maven3.1.1'
-        jdk 'java8'
+        maven 'Maven 3.5.2'
+        jdk 'jdk1.8.0_151'
     }
     stages {
         stage ('Initialize') {
@@ -18,11 +18,11 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    bat 'mvn install'
             }
              post {
                 success {
-                    junit 'NumberGenerator/target/surefire-reports/*.xml'
+                    junit 'HelloWorld/target/surefire-reports/*.xml'
                         }
                  }
                
