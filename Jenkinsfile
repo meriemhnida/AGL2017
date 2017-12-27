@@ -8,7 +8,7 @@ pipeline {
         
         stage ('Build') {
             steps {
-            bat 'cd HelloWorld & mvn install'
+            bat 'mvn install'
             }
             post {
                 success {
