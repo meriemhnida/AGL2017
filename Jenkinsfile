@@ -5,11 +5,7 @@ pipeline {
         jdk 'jdk1.8.0_151'
     }
     stages {
-        stage ('Initialize') {
-            steps {
-            }
-        }
-
+        
         stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
