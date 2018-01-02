@@ -10,11 +10,7 @@ pipeline {
             steps {
             bat 'mvn install'
             }
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
-                }
-            }
+           
         }
         
         stage('Sonarqube analysis') {
