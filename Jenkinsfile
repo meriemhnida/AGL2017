@@ -1,24 +1,11 @@
 pipeline {
-    agent any
-    tools {
-        maven 'Maven 3.5.2'
-        jdk 'jdk1.8.0_151'
-    }
+    agent { dockerfile true }
     stages {
-        
-      
-        
-        stage('Sonarqube analysis') {
-    steps {
-    script {
-             scannerHome = tool 'SonarScanner';
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
         }
-     withSonarQubeEnv('SonarQube') {
-       bat "${scannerHome}\\bin\\sonar-scanner.bat" 
     }
-
-    } 
-        }
-        
 }
-    }
